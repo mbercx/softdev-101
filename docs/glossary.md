@@ -1,4 +1,4 @@
-# Glossary
+# 📜 Glossary
 
 !!! note
     This page mainly discusses "semantics": i.e. what do we mean when we say words?

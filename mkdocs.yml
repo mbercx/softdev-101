@@ -1,7 +1,9 @@
-site_name: softdev-101
+site_name: Basics of software development
 
 theme:
   name: material
+  features:
+    - navigation.expand
 
 markdown_extensions:
   - admonition
@@ -12,5 +14,12 @@ markdown_extensions:
 nav:
   - index.md
   - setup.md
-  - version_control.md
+  - 📚 Topics:
+    - version_control.md
+    - environments.md
+    - tests.md
+    - documentation.md
+    - formatting.md
+    - ci.md
+    - publishing.md
   - glossary.md

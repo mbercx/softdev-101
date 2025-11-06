@@ -1,4 +1,4 @@
-# Introduction
+# ℹ️ Introduction
 
 The purpose of this workshop is to learn some basic concepts/tools of software development, with a focus on Python.
 

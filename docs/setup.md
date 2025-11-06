@@ -1,4 +1,4 @@
-# Setup
+# ⚙️ Setup
 
 ## Before the workshop
 
