@@ -8,3 +8,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+
+nav:
+  - index.md
+  - setup.md
+  - version_control.md
+  - glossary.md
