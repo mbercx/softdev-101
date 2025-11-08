@@ -8,19 +8,28 @@ Unless you need to learn a specific VCS because your collaborators use it, I wou
 
 ## Why
 
-Imagine the following scenario: you have a piece of working code, but want to make some changes.
-It's late, you're out of coffee, and after working for half an hour you realise that you've made several mistakes, and **the code is completely broken**.
-However, you've already saved your file with your changes, and you don't have a backup.
+Version control serves several critical purposes:
 
-- How would you know what you have changed to the code?
-- How would you go back to the version that worked?
+**History and recovery**: Track every change made to your code, who made it, and when.
+If something breaks, you can identify exactly what changed and revert to a working version.
 
-Running 'undo' repeatedly might work if you catch it immediately, but what if you closed the editor?
-Or worked across multiple files?
-You could spend hours reconstructing the code and testing that it works again.
-With `git`, you can see exactly what changed with `git diff` and revert to the working version with a single command.
+**Collaboration**: Multiple people can work on the same codebase simultaneously without overwriting each other's changes.
+Git helps merge contributions and resolve conflicts.
 
-This is only _one_ example of how a VCS like `git` can make your life easier, and make collaboration/review _possible_.
+**Code review**: Changes can be reviewed before being merged into the main code, improving quality and knowledge sharing across the team.
+
+!!!example "Real-world scenario"
+
+    Imagine you have a piece of working code, but want to make some changes.
+    It's late, you're out of coffee, and after working for half an hour you realise that you've made several mistakes, and **the code is completely broken**.
+    However, you've already saved your file with your changes, and you don't have a backup.
+
+    - How would you know what you have changed to the code?
+    - How would you go back to the version that worked?
+
+    Running 'undo' repeatedly might work if you catch it immediately, but what if you closed the editor or worked across multiple files?
+    You could spend hours reconstructing the code.
+    With `git`, you can see exactly what changed with `git diff` and revert to the working version with a single command.
 
 !!!note "Glossary"
 

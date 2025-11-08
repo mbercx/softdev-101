@@ -19,6 +19,7 @@ nav:
   - 📚 Topics:
     - version_control.md
     - environments.md
+    - packages.md
     - tests.md
     - documentation.md
     - formatting.md

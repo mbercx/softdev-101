@@ -11,6 +11,7 @@ Topics that will be covered:
 
 - [Version control with `git`](version_control.md)
 - [Python environments](environments.md)
+- [Packages](packages.md)
 - Testing with `pytest`
 - Writing documentation
 - Formatting/linting your code with Ruff
