@@ -20,8 +20,8 @@ nav:
     - version_control.md
     - environments.md
     - packages.md
-    - tests.md
     - documentation.md
+    - tests.md
     - formatting.md
     - ci.md
     - publishing.md
