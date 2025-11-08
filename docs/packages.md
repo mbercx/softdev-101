@@ -34,7 +34,7 @@ This is how all the packages you `pip install` are organized.
     Without proper packaging, you'd copy-paste the files and manually track dependencies.
     With a package, you simply `pip install` it in the new project and import what you need.
 
-# How
+## How
 
 In principle, you can adopt any package structure you'd like.
 However, adhering to a standard package structure makes it easier for others to understand and contribute to your code.
