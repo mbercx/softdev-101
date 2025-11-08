@@ -18,23 +18,5 @@ To get up and running quickly, please make sure you have the following ready for
     If you are using windows, it may be a good idea to install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
     Of course, you can also look for the Powershell equivalent, or ask your favorite AI chatbot.
 
-## Material
-
-For the hands-on part of this workshop, you can either work directly on the repository that hosts this documentation.
-Simply "clone" the repository from GitHub:
-
-```
-git clone https://github.com/mbercx/softdev-101.git
-```
-
-You can also work with your own Python code, of course!
-Consider using the package template that the repository above is based on, you can find [instructions here](https://github.com/mbercx/python-copier?tab=readme-ov-file#usage).
-
-!!! warning
-
-    Although we will focus on the basics, there is still _a lot_ of ground to cover.
-    Don't worry in case you don't understand everything right away!
-    All of this is very intimidating at first, I know, I've been there, and it took me a long time to learn as well. 
-
 Once you're ready, let's start with the mother of all software development tools: [Version control](version_control.md).
 

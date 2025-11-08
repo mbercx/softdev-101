@@ -9,15 +9,23 @@ The purpose of this workshop is to learn some basic concepts/tools of software d
 
 Topics that will be covered:
 
-- Version control with `git`
+- [Version control with `git`](version_control.md)
+- [Python environments](environments.md)
 - Testing with `pytest`
 - Writing documentation
-- Formatting/linting
+- Formatting/linting your code with Ruff
 - Continuous Integration (CI)
 - Publishing your code on the PyPI (CD)
 
 Note that although we'll be focussing on tools for Python, **this is not a Python course**!
 You won't need any advanced Python concepts, but understanding basic syntax will be helpful.
+
+!!! warning
+
+    Although we will focus on the basics, there is still _a lot_ of ground to cover.
+    **Don't worry in case you don't understand everything right away!**
+    All of this is very intimidating at first, I know, I've been there.
+    It took me a long time to learn how to use these tools, and I'm still learning more every day.
 
 !!! note
 
