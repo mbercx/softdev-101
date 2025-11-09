@@ -35,3 +35,97 @@ This ensures the same bug doesn't sneak back in during future changes.
 
 ## How
 
+The most popular testing framework for Python is `pytest`.
+
+### Installing pytest
+
+If pytest is listed in your `pyproject.toml` as a test dependency, you can install it with:
+
+```
+pip install -e .[tests]
+```
+
+This installs your package in editable mode (`-e`) along with the test dependencies.
+
+For the `softdev-101` package, pytest is already included in the `tests` optional dependencies:
+
+```toml
+[project.optional-dependencies]
+tests = [
+  "pytest"
+]
+```
+
+### Running pytest
+
+To run all tests in your project:
+
+```
+pytest
+```
+
+Pytest automatically discovers test files (files starting with `test_` or ending with `_test.py`) and runs all functions starting with `test_`.
+
+```console {.no-copy}
+======================== test session starts =========================
+collected 1 item
+
+tests/test_example.py .                                        [100%]
+
+========================= 1 passed in 0.01s ==========================
+```
+
+The `.` indicates the test passed. If a test fails, pytest shows detailed information about what went wrong.
+
+### Writing a simple test
+
+Tests go in the `tests/` directory. Here's a simple example:
+
+```python
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(2, 3) == 5
+    assert add(-1, 1) == 0
+    assert add(0, 0) == 0
+```
+
+The key elements:
+
+- **Function name starts with `test_`**: This tells pytest it's a test
+- **`assert` statements**: Check that conditions are true. If an assertion fails, the test fails
+- **Multiple assertions**: You can have multiple checks in one test
+
+### Using fixtures
+
+Fixtures are reusable pieces of code that set up test conditions.
+They're defined in `conftest.py` and can be used across multiple test files.
+
+Here's the example from `softdev-101`:
+
+```python
+# tests/conftest.py
+import pytest
+
+@pytest.fixture
+def readability_counts() -> bool:
+    return True
+```
+
+```python
+# tests/test_example.py
+def test_example(readability_counts):
+    assert readability_counts is True
+```
+
+Fixtures are useful for e.g. setting up test data or any code you want to reuse across tests. 
+To use a fixture, simply add it as a parameter to your test function.
+`pytest` automatically calls the fixture and passes the result to your test.
+
+!!! tip "Tips for writing good tests"
+
+    - **Test edge cases**: Don't just test the happy path.
+      What happens with empty inputs? Very large numbers? Invalid data?
+    - **Keep tests independent**: Each test should work on its own, not depend on other tests running first.
+    - **Use descriptive names**: `test_add_handles_negative_numbers` is better than `test_add_2`.
