@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "softdev-101"
+name = "{{package_name}}"
 dynamic = ["version"]
 description = ''
 readme = "README.md"
@@ -35,11 +35,11 @@ pre-commit = [
 
 [dependency-groups]
 dev = [
-  "softdev-101[docs,tests,pre-commit]",
+  "{{package_name}}[docs,tests,pre-commit]",
 ]
 
 [tool.hatch.version]
-path = "src/softdev_101/__about__.py"
+path = "src/{{ package_name.lower().replace('-', '_') }}/__about__.py"
 
 [tool.hatch.envs.default]
 installer = 'uv'
@@ -48,7 +48,6 @@ installer = 'uv'
 features = ["docs"]
 scripts.build = "mkdocs build --clean --strict"
 scripts.serve = "mkdocs serve --dev-addr localhost:8000"
-scripts.deploy = "mkdocs gh-deploy --force"
 
 [tool.hatch.envs.pre-commit]
 features = ["pre-commit"]
