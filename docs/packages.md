@@ -133,3 +133,38 @@ Let's go over the various directories and files:
 - `src/`: Contains your actual source code. Using a `src/` directory is best practice because it keeps the project root clean and prevents import issues during testing.
 - `src/dev_tutorial/`: The actual Python package. Note the underscore instead of hyphen - package names must be valid Python identifiers.
 - `tests/`: Your test files, kept separate from source code. We'll cover this in [the tests topic](tests.md).
+
+### Pushing the template files to GitHub
+
+Let's push the local changes in our `dev-tutorial` package to GitHub.
+First, enter the package directory:
+
+```
+cd dev-tutorial
+```
+
+Stage _all_ the new files with:
+
+```
+git add .
+```
+
+And `commit` them:
+
+```
+git commit -m 'Initial commit'
+```
+
+You'll see the full list of files that have been added in this commit.
+Time to `push` your local changes to GitHub:
+
+```
+git push origin
+```
+
+`origin` is the default name of the remote repository you cloned from.
+To see all the remotes you have configured, use:
+
+```
+git remote -v
+```
