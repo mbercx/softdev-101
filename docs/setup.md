@@ -12,11 +12,25 @@ To get up and running quickly, please make sure you have the following ready for
 5. A code editor.
    My preferred option is [VSCode](https://code.visualstudio.com/).
 
-!!!note "Operating System"
+### GitHub authentication
 
-    You can use your preferred operating system, but I have no experience with Windows, and all instructions will be UNIX-based.
-    If you are using windows, it may be a good idea to install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
-    Of course, you can also look for the Powershell equivalent, or ask your favorite AI chatbot.
+For some parts of the workshop, you'll need to be able to authenticate to GitHub from the terminal.
+If you don't know how to do this, the easiest is to use a _token_:
 
-Once you're ready, let's start with the mother of all software development tools: [Version control](version_control.md).
+1. Go to GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic).
+2. Click "Generate new token (classic)".
+3. Give it a description (e.g., "Software development workshop").
+4. Select scopes: check **both** "repo" and "workflow".
+5. Generate and copy the token.
 
+Whenever you need to authenticate to GitHub (e.g. when you `push` to your remote), you can use this token as your password.
+
+!!!warning
+
+    Be sure to copy and save the token somewhere **safe**!
+
+!!!info "Operating System"
+
+    You can use your preferred operating system, but I have no experience with Windows.
+    If you are using Windows, it may be a good idea to install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
+    I'll try to also show the Powershell equivalent of each command, but these don't always exist, and I may forget some here and there.
