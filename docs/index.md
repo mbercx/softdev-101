@@ -15,7 +15,7 @@ Topics that will be covered:
 - [Writing documentation](documentation.md)
 - [Testing with `pytest`](tests.md)
 - [Formatting/linting your code with Ruff](formatting.md)
-- Continuous Integration (CI)
+- [Continuous Integration (CI)](ci.md)
 - Publishing your code on the PyPI (CD)
 
 Note that although we'll be focussing on tools for Python, **this is not a Python course**!
