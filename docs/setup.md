@@ -17,11 +17,11 @@ To get up and running quickly, please make sure you have the following ready for
 For some parts of the workshop, you'll need to be able to authenticate to GitHub from the terminal.
 If you don't know how to do this, the easiest is to use a _token_:
 
-1. Go to GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic).
-2. Click "Generate new token (classic)".
-3. Give it a description (e.g., "Software development workshop").
+1. Go to GitHub → Click on your profile avatar (top right) → Settings → Developer settings (bottom) → Personal access tokens → Tokens (classic).
+2. Click "Generate new token" → "Generate new token (classic)".
+3. Give it a description in the "Note" (e.g., "Software development workshop").
 4. Select scopes: check **both** "repo" and "workflow".
-5. Generate and copy the token.
+5. Click "Generate token" at the bottom and copy the token.
 
 Whenever you need to authenticate to GitHub (e.g. when you `push` to your remote), you can use this token as your password.
 
