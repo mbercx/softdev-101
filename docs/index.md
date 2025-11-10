@@ -14,7 +14,7 @@ Topics that will be covered:
 - [Packages](packages.md)
 - [Writing documentation](documentation.md)
 - [Testing with `pytest`](tests.md)
-- Formatting/linting your code with Ruff
+- [Formatting/linting your code with Ruff](formatting.md)
 - Continuous Integration (CI)
 - Publishing your code on the PyPI (CD)
 
@@ -27,7 +27,3 @@ You won't need any advanced Python concepts, but understanding basic syntax will
     **Don't worry in case you don't understand everything right away!**
     All of this is very intimidating at first, I know, I've been there.
     It took me a long time to learn how to use these tools, and I'm still learning more every day.
-
-!!! note
-
-    The material presented here is mostly based on my experience, but has also been inspired by [this excellent guide](https://learn.scientific-python.org/development/) from the [Scientific Python project](https://github.com/scientific-python). 
