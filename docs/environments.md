@@ -156,7 +156,8 @@ Successfully installed cowsay-6.1
     You should consider upgrading via the '/path/to/your/dir/.my_env/bin/python3 -m pip install --upgrade pip' command.
     ```
 
-    This is nothing to worry about, but feel free to follow the instructions to upgrade your `pip` version.
+    For the material in this workshop, you need at least `pip>=21.3`.
+    If the reported `pip` version is older, follow the instructions to upgrade it.
 
 Let's have the cow spit some facts:
 
@@ -186,34 +187,51 @@ Finally, `setuptools` is a package that helps you build and distribute Python pa
 
 ### Workshop repository
 
-For the rest of this workshop, you can work directly on the repository that hosts this documentation.
-Simply `clone` the repository from GitHub:
+For the rest of this workshop, you'll need to have a `git` repository to work on.
+[Create a new **empty** repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository#creating-a-new-repository-from-the-web-ui) called `dev-tutorial` and `clone` it to your local directory:
 
 ```
-git clone https://github.com/mbercx/softdev-101.git
+git clone https://github.com/<YOUR_USERNAME>/dev-tutorial.git
 ```
 
-??? question "Can I also work with my code?"
+??? question "Can I also work with my own code?"
 
     Of course!
     But you may have a bit more work: the instructions in the next pages won't perfectly fit your package.
-    Consider using the package template that this repository is based on, you can find [instructions here](https://github.com/mbercx/python-copier?tab=readme-ov-file#usage).
+    If you get stuck, consider starting from a fresh repository and using the template discussed below.
+
+To get the workshop template, we'll use a tool called `copier`.
+First install it in your virtual environment:
+
+```
+pip install copier
+```
+
+Then copy the workshop template into your fresh repository.
+
+```
+copier copy -f https://github.com/mbercx/softdev-101 dev-tutorial/
+```
+
 
 To make sure Python is aware of the changes we make as we work on our package, let's install the package from its local directory in "editable" mode (`-e`):
 
 ```
-pip install -e softdev-101/
+pip install -e dev-tutorial/
 ```
 
 Listing the packages installed in our environment again with `pip list`:
 
 ```console {.no-copy}
-Package     Version Editable project location
------------ ------- ----------------------------------------
-cowsay      6.1
-pip         25.3
-setuptools  58.0.4
-softdev-101 0.0.1   /path/to/your/dir/softdev-101
+❯ pip list
+Package                Version Editable project location
+---------------------- ------- ---------------------------------------
+annotated-types        0.7.0
+colorama               0.4.6
+copier                 9.10.3
+cowsay                 6.1
+dev-tutorial           0.0.1   /Users/mbercx/tmp/workshop/dev-tutorial
+...
 ```
 
 You can see a new column: `Editable project location`.
