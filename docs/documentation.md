@@ -34,7 +34,7 @@ For this workshop, we'll focus on creating user-facing documentation using [MkDo
 
 ### Setting up MkDocs
 
-MkDocs is already set up in the `dev_tutorial` package.
+MkDocs is already set up in the `dev-tutorial` package.
 Let's look at the key components:
 
 The `mkdocs.yml` configuration file:
@@ -79,14 +79,21 @@ docs = [
 For the documentation packages, you have to install the `docs` extra:
 
 ```
-pip install -e dev_tutorial[docs]
+pip install -e dev-tutorial[docs]
 ```
 
 Notice the `[docs]` at the end: this tells `pip` to also install the optional dependencies specified under `docs`.
 The output is a little bigger this time!
 We only installed `mkdocs` and `mkdocs-material`, but they have their own dependencies.
 
-Now we can use the `mkdocs` command to build the documentation:
+Now we can use the `mkdocs` command to build the documentation.
+However, this command needs to be executed at the root level of your package, where `mkdocs.yml` is located.
+
+```
+cd dev-tutorial
+```
+
+Now you can `build` the documentation pages:
 
 ```
 mkdocs build
@@ -94,7 +101,7 @@ mkdocs build
 
 ```console {.no-copy}
 INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory: /path/to/your/dir/dev_tutorial/site
+INFO    -  Building documentation to directory: /path/to/your/dir/dev-tutorial/site
 INFO    -  Documentation built in 0.22 seconds
 ```
 
@@ -105,7 +112,7 @@ Open it and have a look:
 open site/index.html
 ```
 
-You should recognise it, it's the documentation you're reading now!
+It's a little empty at the moment, but you can work on that later!
 
 Building the documentation and reloading the page every time is rather tedious.
 Fortunately, you can also "serve" the documentation:
@@ -119,7 +126,8 @@ this will run a server that automatically detects file changes when you save the
 ### Writing documentation
 
 Documentation files go in the `docs/` directory as Markdown (`.md`) files.
-The page you're reading right now is `docs/documentation.md`!
+The landing page of your documentation is `docs/index.md`.
+Open the Markdown file and write some content, then save the file.
 
 MkDocs uses standard Markdown syntax. For example, to create a link:
 
@@ -149,10 +157,8 @@ For the Material for MkDocs theme and all its possible extensions, we refer to [
 
 !!! tip "Give it a try!"
 
-    Serve the documentation with `mkdocs serve`, open this page, make some changes and save the file.
+    Serve the documentation with `mkdocs serve`, open `docs/index.md`, make some changes and save the file.
     Can you see the page being updated?
-
-You're probably wondering how to deploy the documentation to a website, as I've done for this repository.
 
 ### Deploying to GitHub Pages
 
@@ -181,12 +187,12 @@ This command:
 Your documentation will be available at:
 
 ```
-https://<username>.github.io/dev_tutorial/
+https://<username>.github.io/dev-tutorial/
 ```
 
 For example, this documentation is hosted at: [https://mbercx.github.io/softdev-101/](https://mbercx.github.io/softdev-101/)
 
-!!!note "First time setup"
+???tip "My page is not deploying! 😭"
 
     The first time you deploy, you may need to enable GitHub Pages in your repository settings:
 
@@ -195,7 +201,7 @@ For example, this documentation is hosted at: [https://mbercx.github.io/softdev-
     3. Under "Source", select the `gh-pages` branch
     4. Click **Save**
 
-    After a few minutes, your documentation will be live!
+    After a few minutes, your documentation should be live!
 
 !!!warning "Be careful with `gh-deploy`"
 
