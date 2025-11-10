@@ -208,3 +208,8 @@ For example, this documentation is hosted at: [https://mbercx.github.io/softdev-
     The `gh-deploy` command force-pushes to the `gh-pages` branch, overwriting its history.
     This is usually fine since the `gh-pages` branch only contains built documentation, not source code.
     However, make sure you're in the right repository before deploying!
+
+---
+
+Your documentation is looking great! But how do you know your code actually works as expected? Let's add some automated testing to verify everything behaves correctly.
+**Next up: [Testing with pytest](tests.md)**

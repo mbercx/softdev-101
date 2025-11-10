@@ -193,3 +193,8 @@ Change the factor in the test from 2 to 3, and see what happens.
       What happens with empty inputs? Very large numbers? Invalid data?
     - **Keep tests independent**: Each test should work on its own, not depend on other tests running first.
     - **Use descriptive names**: `test_add_handles_negative_numbers` is better than `test_add_2`.
+
+---
+
+Your tests are keeping your code reliable! Now let's make your code look professional and catch potential bugs before they happen with automated formatting and linting.
+**Next up: [Formatting/linting your code with Ruff](formatting.md)**

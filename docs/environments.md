@@ -189,3 +189,8 @@ Finally, `setuptools` is a package that helps you build and distribute Python pa
 
     Can't get enough of virtual environments?
     Read the original Python Enhancement Proposal (PEP) that introduced them into the standard library: [PEP 405](https://peps.python.org/pep-0405/).
+
+---
+
+With your environment set up and ready to install packages, it's time to learn how to structure your own Python code as a package.
+**Next up: [Packages](packages.md)**

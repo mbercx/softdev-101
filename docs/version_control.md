@@ -214,3 +214,8 @@ Date:   Fri Nov 7 15:17:41 2025 +1000
 
     At UQ, Ben Roberts also runs a workshop on using `git` and GitHub which goes into much more detail than this tutorial.
     If you're curious, [have a look at the workshop material](https://github.com/benroberts999/git-workshop).
+
+---
+
+Now that you understand version control basics, let's move on to managing Python dependencies and isolated workspaces.
+**Next up: [Python environments](environments.md)**

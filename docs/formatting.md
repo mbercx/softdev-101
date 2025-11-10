@@ -185,3 +185,8 @@ This ensures your code is always formatted and linted before it enters version c
 
     Try to make some changes to one of the modules, and run `git commit`.
     Both the linter and formatter should run automatically.
+
+---
+
+You've set up local tools to check your code, but wouldn't it be nice if these checks ran automatically every time you push to GitHub? That's where Continuous Integration comes in!
+**Next up: [Continuous Integration (CI)](ci.md)**

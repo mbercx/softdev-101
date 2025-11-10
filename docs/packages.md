@@ -168,3 +168,8 @@ To see all the remotes you have configured, use:
 ```
 git remote -v
 ```
+
+---
+
+You've got your package structure in place! Now let's make it easy for others (and your future self) to understand and use your code.
+**Next up: [Writing documentation](documentation.md)**
