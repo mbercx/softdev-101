@@ -39,7 +39,7 @@ The most popular testing framework for Python is `pytest`.
 
 ### Installing pytest
 
-If pytest is listed in your `pyproject.toml` as a test dependency, you can install it with:
+If `pytest` is listed in your `pyproject.toml` as a test dependency, you can install it with:
 
 ```
 pip install -e .[tests]
@@ -47,12 +47,13 @@ pip install -e .[tests]
 
 This installs your package in editable mode (`-e`) along with the test dependencies.
 
-For the `dev_tutorial` package, pytest is already included in the `tests` optional dependencies:
+For the `dev-tutorial` package, `pytest` is already included in the `tests` optional dependencies:
 
-```toml
+```toml {.no-copy}
 [project.optional-dependencies]
 tests = [
-  "pytest"
+  "pytest",
+  "pytest-regressions"
 ]
 ```
 
@@ -75,16 +76,16 @@ tests/test_example.py .                                        [100%]
 ========================= 1 passed in 0.01s ==========================
 ```
 
-The `.` indicates the test passed. If a test fails, pytest shows detailed information about what went wrong.
+The `.` indicates the test passed.
+If a test fails, `pytest` shows detailed information about what went wrong.
 
 ### Writing a simple test
 
-Tests go in the `tests/` directory. Here's a simple example:
+Tests go in the `tests/` directory.
+Here's a simple example testing the `add` function in `tests/test_example.py`:
 
 ```python
-def add(a, b):
-    return a + b
-
+# tests/test_example.py
 def test_add():
     assert add(2, 3) == 5
     assert add(-1, 1) == 0
@@ -93,16 +94,16 @@ def test_add():
 
 The key elements:
 
-- **Function name starts with `test_`**: This tells pytest it's a test
-- **`assert` statements**: Check that conditions are true. If an assertion fails, the test fails
-- **Multiple assertions**: You can have multiple checks in one test
+- **Function name starts with `test_`**: This tells pytest it's a test.
+- **`assert` statements**: Check that conditions are true. If an assertion fails, the test fails.
+- **Multiple assertions**: You can have multiple checks in one test.
 
 ### Using fixtures
 
 Fixtures are reusable pieces of code that set up test conditions.
 They're defined in `conftest.py` and can be used across multiple test files.
 
-Here's the example from `dev_tutorial`:
+Here's the example from `dev-tutorial`:
 
 ```python
 # tests/conftest.py

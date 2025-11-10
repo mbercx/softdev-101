@@ -13,7 +13,7 @@ Topics that will be covered:
 - [Python environments](environments.md)
 - [Packages](packages.md)
 - [Writing documentation](documentation.md)
-- Testing with `pytest`
+- [Testing with `pytest`](tests.md)
 - Formatting/linting your code with Ruff
 - Continuous Integration (CI)
 - Publishing your code on the PyPI (CD)
