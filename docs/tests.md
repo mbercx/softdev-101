@@ -59,34 +59,43 @@ tests = [
 
 ### Running pytest
 
-To run all tests in your project:
+To run all tests in your project with added verbosity (`-v`):
 
 ```
-pytest
+pytest -v
 ```
 
 Pytest automatically discovers test files (files starting with `test_` or ending with `_test.py`) and runs all functions starting with `test_`.
 
 ```console {.no-copy}
-======================== test session starts =========================
-collected 1 item
+========================================================= test session starts =========================================================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/mbercx/tmp/workshop/.my_env/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/mbercx/tmp/workshop/dev-tutorial
+configfile: pyproject.toml
+plugins: datadir-1.8.0, regressions-2.8.3
+collected 2 items
 
-tests/test_example.py .                                        [100%]
+tests/test_functions.py::test_add PASSED                                                                                        [ 50%]
+tests/test_functions.py::test_fixture PASSED                                                                                    [100%]
 
-========================= 1 passed in 0.01s ==========================
+========================================================== 2 passed in 0.01s ==========================================================
 ```
 
-The `.` indicates the test passed.
+Hopefully all the tests passed!
 If a test fails, `pytest` shows detailed information about what went wrong.
 
 ### Writing a simple test
 
 Tests go in the `tests/` directory.
-Here's a simple example testing the `add` function in `tests/test_example.py`:
+Here's a simple example testing the `add` function from `tests/test_functions.py`:
 
 ```python
-# tests/test_example.py
+# tests/test_functions.py
+from dev_tutorial.functions import add
+
 def test_add():
+    """Test the `add` function."""
     assert add(2, 3) == 5
     assert add(-1, 1) == 0
     assert add(0, 0) == 0
@@ -97,6 +106,7 @@ The key elements:
 - **Function name starts with `test_`**: This tells pytest it's a test.
 - **`assert` statements**: Check that conditions are true. If an assertion fails, the test fails.
 - **Multiple assertions**: You can have multiple checks in one test.
+- **Docstring**: Optional but recommended to describe what the test does.
 
 ### Using fixtures
 
@@ -110,19 +120,72 @@ Here's the example from `dev-tutorial`:
 import pytest
 
 @pytest.fixture
-def readability_counts() -> bool:
-    return True
+def list_of_integers():
+    return [0, 1, 2, 3, 4]
 ```
 
 ```python
-# tests/test_example.py
-def test_example(readability_counts):
-    assert readability_counts is True
+# tests/test_functions.py
+from dev_tutorial.functions import sum_and_multiply
+
+def test_fixture(list_of_integers):
+    """Test the `sum_and_multiply` function using the `list_of_integers` fixture."""
+    assert sum_and_multiply(list_of_integers, 2) == 20
 ```
 
-Fixtures are useful for e.g. setting up test data or any code you want to reuse across tests. 
+Fixtures are useful for setting up test data or any code you want to reuse across tests.
 To use a fixture, simply add it as a parameter to your test function.
 `pytest` automatically calls the fixture and passes the result to your test.
+
+In this example, `list_of_integers` returns `[0, 1, 2, 3, 4]`, which sums to 10.
+Multiplying by 2 gives 20, which is what the test verifies.
+
+### Writing an integration test with pytest-regressions
+
+The `pytest-regressions` package provides fixtures for automatically comparing test outputs against stored reference data.
+This is especially useful for testing complex outputs like dictionaries, dataframes, or files.
+
+The `data_regression` fixture is particularly powerful for more complex data.
+Here's an example from `tests/test_functions.py`:
+
+```python
+# tests/test_functions.py
+def test_data_regression(list_of_integers, data_regression):
+    result = multiply(list_of_integers, 2)
+    data_regression.check(result)
+```
+
+In the template package, the test is still commented.
+Remove the comment symbols (`#`) and run your tests again.
+The first time you run this test, it will fail with:
+
+```python {.no-copy}
+>       data_regression.check(result)
+E       Failed: File not found in data directory, created:
+E       - /Users/mbercx/tmp/workshop/dev-tutorial/tests/test_functions/test_data_regression.yml
+```
+
+The `data_regression` fixture creates a file at `tests/test_functions/test_data_regression.yml` containing the reference output.
+On subsequent runs, it compares the current output against this reference.
+
+For the example above, the reference file would contain:
+
+```yaml
+- 0
+- 2
+- 4
+- 6
+- 8
+```
+
+If the output changes:
+
+- The test **fails** and shows you the difference
+- Run `pytest --force-regen` to update the reference files if the changes are intentional
+- You can review the changes to verify they're correct
+
+If you have some time, give it a try!
+Change the factor in the test from 2 to 3, and see what happens.
 
 !!! tip "Tips for writing good tests"
 

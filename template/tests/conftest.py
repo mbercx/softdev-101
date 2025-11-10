@@ -7,5 +7,5 @@ import pytest
 
 
 @pytest.fixture
-def readability_counts() -> bool:
-    return True
+def list_of_integers():
+    return [0, 1, 2, 3, 4]
