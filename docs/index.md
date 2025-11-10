@@ -27,3 +27,9 @@ You won't need any advanced Python concepts, but understanding basic syntax will
     **Don't worry in case you don't understand everything right away!**
     All of this is very intimidating at first, I know, I've been there.
     It took me a long time to learn how to use these tools, and I'm still learning more every day.
+
+!!! question "Have questions? Feedback?"
+
+    During the workshop you can of course raise your hand and ask me, but I may be busy.
+    I've set up a [GitHub Discussions](https://github.com/mbercx/softdev-101/discussions) page where you can ask questions and give feedback.
+    Don't hesitate to raise your questions there, even after the workshop is finished!
