@@ -185,57 +185,6 @@ setuptools 58.0.4
 As mentioned, `pip` is automatically installed in every virtual environment created with `venv`, whereas `cowsay` we installed afterwards with `pip`.
 Finally, `setuptools` is a package that helps you build and distribute Python packages, but we don't need to go into that here.
 
-### Workshop repository
-
-For the rest of this workshop, you'll need to have a `git` repository to work on.
-[Create a new **empty** repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository#creating-a-new-repository-from-the-web-ui) called `dev-tutorial` and `clone` it to your local directory:
-
-```
-git clone https://github.com/<YOUR_USERNAME>/dev-tutorial.git
-```
-
-??? question "Can I also work with my own code?"
-
-    Of course!
-    But you may have a bit more work: the instructions in the next pages won't perfectly fit your package.
-    If you get stuck, consider starting from a fresh repository and using the template discussed below.
-
-To get the workshop template, we'll use a tool called `copier`.
-First install it in your virtual environment:
-
-```
-pip install copier
-```
-
-Then copy the workshop template into your fresh repository.
-
-```
-copier copy -f https://github.com/mbercx/softdev-101 dev-tutorial/
-```
-
-
-To make sure Python is aware of the changes we make as we work on our package, let's install the package from its local directory in "editable" mode (`-e`):
-
-```
-pip install -e dev-tutorial/
-```
-
-Listing the packages installed in our environment again with `pip list`:
-
-```console {.no-copy}
-❯ pip list
-Package                Version Editable project location
----------------------- ------- ---------------------------------------
-annotated-types        0.7.0
-colorama               0.4.6
-copier                 9.10.3
-cowsay                 6.1
-dev-tutorial           0.0.1   /Users/mbercx/tmp/workshop/dev-tutorial
-...
-```
-
-You can see a new column: `Editable project location`.
-
 !!!tip "A PEP a day keeps the doctor away"
 
     Can't get enough of virtual environments?

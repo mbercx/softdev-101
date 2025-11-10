@@ -36,29 +36,80 @@ This is how all the packages you `pip install` are organized.
 
 ## How
 
+### Workshop repository
+
+For the rest of this workshop, you'll need to have a `git`-tracked Python package to work on.
+[Create a new **empty** repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository#creating-a-new-repository-from-the-web-ui) called `dev-tutorial` and `clone` it to your local directory:
+
+```
+git clone https://github.com/<YOUR_USERNAME>/dev-tutorial.git
+```
+
+??? question "Can I also work with my own code?"
+
+    Of course!
+    But you may have a bit more work: the instructions in the next pages won't perfectly fit your package.
+    If you get stuck, consider starting from a fresh repository and using the template discussed below.
+
+To get the workshop package template, we'll use a tool called `copier`.
+First install it in your virtual environment:
+
+```
+pip install copier
+```
+
+Then copy the workshop template into your fresh repository.
+
+```
+copier copy -f https://github.com/mbercx/softdev-101 dev-tutorial/
+```
+
+To make sure Python is aware of the changes we make as we work on our package, let's install the package from its local directory in "editable" mode (`-e`):
+
+```
+pip install -e dev-tutorial/
+```
+
+Listing the packages installed in our environment again with `pip list`:
+
+```console {.no-copy}
+❯ pip list
+Package                Version Editable project location
+---------------------- ------- ---------------------------------------
+annotated-types        0.7.0
+colorama               0.4.6
+copier                 9.10.3
+cowsay                 6.1
+dev-tutorial           0.0.1   /Users/mbercx/tmp/workshop/dev-tutorial
+...
+```
+
+You can see a new column: `Editable project location`.
+
+### Structure
+
 In principle, you can adopt any package structure you'd like.
 However, adhering to a standard package structure makes it easier for others to understand and contribute to your code.
 Everyone knows where to find the source code, tests, and documentation.
-Have a look at the structure of the `softdev-101` package:
+Have a look at the structure of the `dev-tutorial` package:
 
 ```
-tree softdev-101/
+tree dev-tutorial
 ```
 
 ```console {.no-copy}
-softdev-101/
+dev-tutorial
 ├── docs
-│   ├── ci.md
-│   ├── ...
-│   └── version_control.md
+│   ├── developer.md
+│   └── index.md
 ├── LICENSE
 ├── mkdocs.yml
 ├── pyproject.toml
 ├── README.md
 ├── src
-│   └── softdev_101
-│       ├── __about__.py
-│       └── __init__.py
+│   └── dev_tutorial
+│       ├── __about__.py
+│       └── __init__.py
 └── tests
     ├── conftest.py
     └── test_example.py
@@ -80,5 +131,5 @@ Let's go over the various directories and files:
   Contains package metadata (name, version, dependencies), build system settings, and tool configurations.
 - `README.md`: The front page of your package - the first thing people see on GitHub or PyPI.
 - `src/`: Contains your actual source code. Using a `src/` directory is best practice because it keeps the project root clean and prevents import issues during testing.
-- `src/softdev_101/`: The actual Python package. Note the underscore instead of hyphen - package names must be valid Python identifiers.
+- `src/dev_tutorial/`: The actual Python package. Note the underscore instead of hyphen - package names must be valid Python identifiers.
 - `tests/`: Your test files, kept separate from source code. We'll cover this in [the tests topic](tests.md).
