@@ -13,13 +13,12 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install Hatch
+      - name: Install pre-commit
         run: |
-          pip install hatch
-          hatch env prune
+          pip install pre-commit
 
       - name: Run pre-commit
-        run: hatch run pre-commit:run
+        run: pre-commit run -a
 
   tests:
     runs-on: ubuntu-latest
@@ -32,5 +31,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: pip install hatch
-      - run: hatch test
+      - run: pip install .[tests]
+      - run: pytest -v
