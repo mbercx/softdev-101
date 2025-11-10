@@ -1,7 +1,11 @@
 site_name: Basics of software development
+repo_url: https://github.com/mbercx/softdev-101
+repo_name: softdev-101
 
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.expand
     - content.code.copy
