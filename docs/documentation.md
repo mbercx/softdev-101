@@ -34,7 +34,7 @@ For this workshop, we'll focus on creating user-facing documentation using [MkDo
 
 ### Setting up MkDocs
 
-MkDocs is already set up in the `softdev-101` package.
+MkDocs is already set up in the `dev_tutorial` package.
 Let's look at the key components:
 
 The `mkdocs.yml` configuration file:
@@ -79,7 +79,7 @@ docs = [
 For the documentation packages, you have to install the `docs` extra:
 
 ```
-pip install -e softdev-101[docs]
+pip install -e dev_tutorial[docs]
 ```
 
 Notice the `[docs]` at the end: this tells `pip` to also install the optional dependencies specified under `docs`.
@@ -94,7 +94,7 @@ mkdocs build
 
 ```console {.no-copy}
 INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory: /path/to/your/dir/softdev-101/site
+INFO    -  Building documentation to directory: /path/to/your/dir/dev_tutorial/site
 INFO    -  Documentation built in 0.22 seconds
 ```
 
@@ -181,7 +181,7 @@ This command:
 Your documentation will be available at:
 
 ```
-https://<username>.github.io/<repository>/
+https://<username>.github.io/dev_tutorial/
 ```
 
 For example, this documentation is hosted at: [https://mbercx.github.io/softdev-101/](https://mbercx.github.io/softdev-101/)

@@ -47,7 +47,7 @@ pip install -e .[tests]
 
 This installs your package in editable mode (`-e`) along with the test dependencies.
 
-For the `softdev-101` package, pytest is already included in the `tests` optional dependencies:
+For the `dev_tutorial` package, pytest is already included in the `tests` optional dependencies:
 
 ```toml
 [project.optional-dependencies]
@@ -102,7 +102,7 @@ The key elements:
 Fixtures are reusable pieces of code that set up test conditions.
 They're defined in `conftest.py` and can be used across multiple test files.
 
-Here's the example from `softdev-101`:
+Here's the example from `dev_tutorial`:
 
 ```python
 # tests/conftest.py
