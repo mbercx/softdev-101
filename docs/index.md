@@ -7,7 +7,7 @@ The purpose of this workshop is to learn some basic concepts/tools of software d
 - 👥 **Who**: Anyone using Python for research/data work
 - 🔗 **Registration link**: [https://forms.gle/7b2vd3KyuK633bPK8](https://forms.gle/7b2vd3KyuK633bPK8)
 
-Topics that will be covered:
+Topics that will be covered (should be executed in order!):
 
 - [Version control with `git`](version_control.md)
 - [Python environments](environments.md)
@@ -16,7 +16,7 @@ Topics that will be covered:
 - [Testing with `pytest`](tests.md)
 - [Formatting/linting your code with Ruff](formatting.md)
 - [Continuous Integration (CI)](ci.md)
-- Publishing your code on the PyPI (CD)
+- [Publishing your code on the PyPI (CD)](publishing.md)
 
 Note that although we'll be focussing on tools for Python, **this is not a Python course**!
 You won't need any advanced Python concepts, but understanding basic syntax will be helpful.
