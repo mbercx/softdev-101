@@ -207,7 +207,7 @@ This command:
 Your documentation will be available at:
 
 ```
-https://<username>.github.io/dev-tutorial-<username>/
+https://<YOUR_USERNAME>.github.io/dev-tutorial-<YOUR_USERNAME>/
 ```
 
 For example, this documentation is hosted at: [https://mbercx.github.io/softdev-101/](https://mbercx.github.io/softdev-101/)

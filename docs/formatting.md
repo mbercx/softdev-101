@@ -119,7 +119,7 @@ ruff check
 
 ```console {.no-copy}
 F841 Local variable `debug_mode` is assigned to but never used
- --> src/dev_tutorial_<YOUR_USERNAME>/messy_code.py:3:5
+ --> src/dev_tutorial_<YOUR_USERNAME>/messy.py:3:5
   |
 1 | def calculate_statistics(data, include_median=True):
 2 |     """Calculate statistics for a list of numbers."""

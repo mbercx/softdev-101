@@ -92,7 +92,7 @@ Here's a simple example testing the `add` function from `tests/test_functions.py
 
 ```python
 # tests/test_functions.py
-from dev_tutorial.functions import add
+from dev_tutorial_<YOUR_USERNAME>.functions import add
 
 def test_add():
     """Test the `add` function."""
@@ -126,7 +126,7 @@ def list_of_integers():
 
 ```python
 # tests/test_functions.py
-from dev_tutorial.functions import sum_and_multiply
+from dev_tutorial_<YOUR_USERNAME>.functions import sum_and_multiply
 
 def test_fixture(list_of_integers):
     """Test the `sum_and_multiply` function using the `list_of_integers` fixture."""
