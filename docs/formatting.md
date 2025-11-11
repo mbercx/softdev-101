@@ -45,10 +45,10 @@ pip install ruff
 ```
 
 Let's see `ruff` in action!
-Have a look at the file `src/dev_tutorial/messy.py`:
+Have a look at the file `src/dev_tutorial_<YOUR_USERNAME>/messy.py`:
 
 ```python {.no-copy}
-# src/dev_tutorial/messy.py
+# src/dev_tutorial_<YOUR_USERNAME>/messy.py
 def calculate_statistics(data,include_median=True):
     """Calculate statistics for a list of numbers."""
     debug_mode=True
@@ -76,14 +76,14 @@ This code has several formatting issues:
 Now run the formatter:
 
 ```
-ruff format src/dev_tutorial/messy_code.py
+ruff format
 ```
 
 ```console {.no-copy}
-1 file reformatted
+1 file reformatted,  5 files left unchanged
 ```
 
-Open `src/dev_tutorial/messy.py` again and check how the code has changed.
+Open `src/dev_tutorial_<YOUR_USERNAME>/messy.py` again and check how the code has changed.
 `ruff` has automatically fixed all the formatting issues:
 
 ```python
@@ -114,12 +114,12 @@ But we still haven't checked the code for quality issues.
 Let's run the linter:
 
 ```
-ruff check src/dev_tutorial/messy_code.py
+ruff check
 ```
 
 ```console {.no-copy}
 F841 Local variable `debug_mode` is assigned to but never used
- --> src/dev_tutorial/messy_code.py:3:5
+ --> src/dev_tutorial_<YOUR_USERNAME>/messy_code.py:3:5
   |
 1 | def calculate_statistics(data, include_median=True):
 2 |     """Calculate statistics for a list of numbers."""
@@ -146,6 +146,11 @@ After making these changes manually, run both commands again to verify everythin
 
 ```
 ruff format && ruff check
+```
+
+```console {.no-copy}
+6 files left unchanged
+All checks passed!
 ```
 
 ### Automating with pre-commit
@@ -188,5 +193,7 @@ This ensures your code is always formatted and linted before it enters version c
 
 ---
 
-You've set up local tools to check your code, but wouldn't it be nice if these checks ran automatically every time you push to GitHub? That's where Continuous Integration comes in!
+You've set up local tools to build & deploy documentation, run tests and check your code.
+Wouldn't it be nice if all this ran automatically every time you push to GitHub?
+That's where Continuous Integration comes in!
 **Next up: [Continuous Integration (CI)](ci.md)**
