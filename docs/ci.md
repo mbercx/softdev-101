@@ -17,7 +17,7 @@ The added benefit is that this is _much_ less error prone: e.g. your documentati
     You're maintaining a Python package, and someone wants to make a change to your code.
     Without CI, you'll have to test their changes locally: did they install/run the `pre-commit`?
     Are the tests passing for the Python versions you support?
-    Ain't nobody got time for that!
+    Let's be real: ain't nobody got time for that!
 
 ## How
 
@@ -78,3 +78,8 @@ Each workflow run shows:
 
 If a workflow fails, you can click into it to see which step failed and read the error messages to debug the issue.
 
+!!! tip "Check your actions!"
+
+    Learning how to write GitHub actions can be a tutorial in itself.
+    For now, go to your repository on GitHub, and click on the Actions tab.
+    Explore the various actions that ran, and see what you can understand.
