@@ -1,0 +1,956 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../documentation/">
+      
+      
+        <link rel="next" href="../formatting/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Tests - Basics of software development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tests" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Basics of software development" class="md-header__button md-logo" aria-label="Basics of software development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Basics of software development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mbercx/softdev-101" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    softdev-101
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Basics of software development" class="md-nav__button md-logo" aria-label="Basics of software development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Basics of software development
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mbercx/softdev-101" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    softdev-101
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ℹ️ Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⚙️ Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📚 Topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            📚 Topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version_control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Packages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Tests
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tests
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    <span class="md-ellipsis">
+      What
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how" class="md-nav__link">
+    <span class="md-ellipsis">
+      How
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing pytest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running pytest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-simple-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing a simple test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-fixtures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using fixtures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-an-integration-test-with-pytest-regressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing an integration test with pytest-regressions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formatting &amp; Linting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publishing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Publishing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📜 Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    <span class="md-ellipsis">
+      What
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how" class="md-nav__link">
+    <span class="md-ellipsis">
+      How
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing pytest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running pytest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-simple-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing a simple test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-fixtures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using fixtures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-an-integration-test-with-pytest-regressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing an integration test with pytest-regressions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tests">Tests</h1>
+<h2 id="what">What</h2>
+<p>Tests are code that verifies your source code works as expected.
+They automatically check that functions produce correct outputs for given inputs, handle edge cases properly, and behave correctly when things go wrong.</p>
+<p>Common types of tests include:</p>
+<ul>
+<li><strong>Unit tests</strong>: Test individual functions or methods in isolation.</li>
+<li><strong>Integration tests</strong>: Test how different parts of your code work together.</li>
+<li><strong>Regression tests</strong>: Ensure bugs that were fixed don't come back.</li>
+</ul>
+<h2 id="why">Why</h2>
+<p>Testing serves several critical purposes:</p>
+<p><strong>Carefree development</strong>: With good tests, you can confidently change your code knowing that if you break something, the tests will catch it.</p>
+<p><strong>Catch bugs early</strong>: Tests help you find problems before your code reaches users (or before your paper is published).
+It's much cheaper to fix a bug during development than after deployment.</p>
+<p><strong>Prevent regressions</strong>: Once you fix a bug, write a test for it.
+This ensures the same bug doesn't sneak back in during future changes.</p>
+<div class="admonition example">
+<p class="admonition-title">Real-world scenario</p>
+<p>You've written a Python script to analyze experimental data for your research.
+It works correctly but takes 30 minutes to run, so you want to make it faster.</p>
+<p>You manage to make it run in 3 minutes - great! But how do you know it still produces the same results?</p>
+<p>Without tests, you'd need to manually compare outputs, check figures visually, and hope you didn't introduce subtle bugs during optimization.
+With tests that verify your code produces correct results for known inputs, you can confidently run your test suite and know within seconds whether your optimizations broke anything.</p>
+</div>
+<h2 id="how">How</h2>
+<p>The most popular testing framework for Python is <code>pytest</code>.</p>
+<h3 id="installing-pytest">Installing pytest</h3>
+<p>If <code>pytest</code> is listed in your <code>pyproject.toml</code> as a test dependency, you can install it with:</p>
+<div class="highlight"><pre><span></span><code>pip install -e .[tests]
+</code></pre></div>
+<p>This installs your package in editable mode (<code>-e</code>) along with the test dependencies.</p>
+<p>For the <code>dev-tutorial</code> package, <code>pytest</code> is already included in the <code>tests</code> optional dependencies:</p>
+<div class="no-copy highlight"><pre><span></span><code><span class="k">[project.optional-dependencies]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;pytest-regressions&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
+<h3 id="running-pytest">Running pytest</h3>
+<p>To run all tests in your project with added verbosity (<code>-v</code>):</p>
+<div class="highlight"><pre><span></span><code>pytest -v
+</code></pre></div>
+<p>Pytest automatically discovers test files (files starting with <code>test_</code> or ending with <code>_test.py</code>) and runs all functions starting with <code>test_</code>.</p>
+<div class="no-copy highlight"><pre><span></span><code><span class="go">========================================================= test session starts =========================================================</span>
+<span class="go">platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/mbercx/tmp/workshop/.my_env/bin/python3</span>
+<span class="go">cachedir: .pytest_cache</span>
+<span class="go">rootdir: /Users/mbercx/tmp/workshop/dev-tutorial</span>
+<span class="go">configfile: pyproject.toml</span>
+<span class="go">plugins: datadir-1.8.0, regressions-2.8.3</span>
+<span class="go">collected 2 items</span>
+
+<span class="go">tests/test_functions.py::test_add PASSED                                                                                        [ 50%]</span>
+<span class="go">tests/test_functions.py::test_fixture PASSED                                                                                    [100%]</span>
+
+<span class="go">========================================================== 2 passed in 0.01s ==========================================================</span>
+</code></pre></div>
+<p>Hopefully all the tests passed!
+If a test fails, <code>pytest</code> shows detailed information about what went wrong.</p>
+<h3 id="writing-a-simple-test">Writing a simple test</h3>
+<p>Tests go in the <code>tests/</code> directory.
+Here's a simple example testing the <code>add</code> function from <code>tests/test_functions.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># tests/test_functions.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dev_tutorial_</span><span class="o">&lt;</span><span class="n">YOUR_USERNAME</span><span class="o">&gt;.</span><span class="n">functions</span> <span class="kn">import</span><span class="w"> </span><span class="nn">add</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_add</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the `add` function.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div>
+<p>The key elements:</p>
+<ul>
+<li><strong>Function name starts with <code>test_</code></strong>: This tells pytest it's a test.</li>
+<li><strong><code>assert</code> statements</strong>: Check that conditions are true. If an assertion fails, the test fails.</li>
+<li><strong>Multiple assertions</strong>: You can have multiple checks in one test.</li>
+<li><strong>Docstring</strong>: Optional but recommended to describe what the test does.</li>
+</ul>
+<h3 id="using-fixtures">Using fixtures</h3>
+<p>Fixtures are reusable pieces of code that set up test conditions.
+They're defined in <code>conftest.py</code> and can be used across multiple test files.</p>
+<p>Here's the example from <code>dev-tutorial</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># tests/conftest.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">list_of_integers</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># tests/test_functions.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dev_tutorial_</span><span class="o">&lt;</span><span class="n">YOUR_USERNAME</span><span class="o">&gt;.</span><span class="n">functions</span> <span class="kn">import</span><span class="w"> </span><span class="nn">sum_and_multiply</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_fixture</span><span class="p">(</span><span class="n">list_of_integers</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the `sum_and_multiply` function using the `list_of_integers` fixture.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">sum_and_multiply</span><span class="p">(</span><span class="n">list_of_integers</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">20</span>
+</code></pre></div>
+<p>Fixtures are useful for setting up test data or any code you want to reuse across tests.
+To use a fixture, simply add it as a parameter to your test function.
+<code>pytest</code> automatically calls the fixture and passes the result to your test.</p>
+<p>In this example, <code>list_of_integers</code> returns <code>[0, 1, 2, 3, 4]</code>, which sums to 10.
+Multiplying by 2 gives 20, which is what the test verifies.</p>
+<h3 id="writing-an-integration-test-with-pytest-regressions">Writing an integration test with pytest-regressions</h3>
+<p>The <code>pytest-regressions</code> package provides fixtures for automatically comparing test outputs against stored reference data.
+This is especially useful for testing complex outputs like dictionaries, dataframes, or files.</p>
+<p>The <code>data_regression</code> fixture is particularly powerful for more complex data.
+Here's an example from <code>tests/test_functions.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># tests/test_functions.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_data_regression</span><span class="p">(</span><span class="n">list_of_integers</span><span class="p">,</span> <span class="n">data_regression</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">multiply</span><span class="p">(</span><span class="n">list_of_integers</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">data_regression</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+<p>In the template package, the test is still commented.
+Remove the comment symbols (<code>#</code>) and run your tests again.
+The first time you run this test, it will fail with:</p>
+<div class="no-copy highlight"><pre><span></span><code><span class="o">&gt;</span>       <span class="n">data_regression</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">E</span>       <span class="n">Failed</span><span class="p">:</span> <span class="n">File</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">data</span> <span class="n">directory</span><span class="p">,</span> <span class="n">created</span><span class="p">:</span>
+<span class="n">E</span>       <span class="o">-</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">mbercx</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">workshop</span><span class="o">/</span><span class="n">dev</span><span class="o">-</span><span class="n">tutorial</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">test_functions</span><span class="o">/</span><span class="n">test_data_regression</span><span class="o">.</span><span class="n">yml</span>
+</code></pre></div>
+<p>The <code>data_regression</code> fixture creates a file at <code>tests/test_functions/test_data_regression.yml</code> containing the reference output.
+On subsequent runs, it compares the current output against this reference.</p>
+<p>For the example above, the reference file would contain:</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+</code></pre></div>
+<p>If the output changes:</p>
+<ul>
+<li>The test <strong>fails</strong> and shows you the difference</li>
+<li>Run <code>pytest --force-regen</code> to update the reference files if the changes are intentional</li>
+<li>You can review the changes to verify they're correct</li>
+</ul>
+<p>If you have some time, give it a try!
+Change the factor in the test from 2 to 3, and see what happens.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tips for writing good tests</p>
+<ul>
+<li><strong>Test edge cases</strong>: Don't just test the happy path.
+  What happens with empty inputs? Very large numbers? Invalid data?</li>
+<li><strong>Keep tests independent</strong>: Each test should work on its own, not depend on other tests running first.</li>
+<li><strong>Use descriptive names</strong>: <code>test_add_handles_negative_numbers</code> is better than <code>test_add_2</code>.</li>
+</ul>
+</div>
+<hr />
+<p>Your tests are keeping your code reliable! Now let's make your code look professional and catch potential bugs before they happen with automated formatting and linting.
+<strong>Next up: <a href="../formatting/">Formatting/linting your code with Ruff</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

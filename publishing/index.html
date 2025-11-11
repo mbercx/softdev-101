@@ -1,0 +1,1044 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ci/">
+      
+      
+        <link rel="next" href="../glossary/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Publishing - Basics of software development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#publishing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Basics of software development" class="md-header__button md-logo" aria-label="Basics of software development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Basics of software development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Publishing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mbercx/softdev-101" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    softdev-101
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Basics of software development" class="md-nav__button md-logo" aria-label="Basics of software development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Basics of software development
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mbercx/softdev-101" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    softdev-101
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ℹ️ Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⚙️ Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📚 Topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            📚 Topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version_control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Packages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formatting &amp; Linting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Publishing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Publishing
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    <span class="md-ellipsis">
+      What
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how" class="md-nav__link">
+    <span class="md-ellipsis">
+      How
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-your-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building your package
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-api-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating API tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-to-test-pypi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uploading to Test PyPI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automating-with-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automating with GitHub Actions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-trusted-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up trusted publishing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-publishing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated publishing workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📜 Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what" class="md-nav__link">
+    <span class="md-ellipsis">
+      What
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how" class="md-nav__link">
+    <span class="md-ellipsis">
+      How
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-your-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building your package
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-api-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating API tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-to-test-pypi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uploading to Test PyPI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automating-with-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automating with GitHub Actions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-trusted-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up trusted publishing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-publishing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated publishing workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="publishing">Publishing</h1>
+<h2 id="what">What</h2>
+<p>Publishing a Python package means making it available for others to install via <code>pip install</code>.
+The primary distribution platform is the Python Package Index (PyPI), the official repository where over 500,000 packages are hosted.
+When you run <code>pip install numpy</code> or <code>pip install pytest</code>, you're installing packages from PyPI.</p>
+<h2 id="why">Why</h2>
+<p>Publishing your code serves several important purposes:</p>
+<p><strong>Ease of installation</strong>: Instead of cloning repositories and installing from source, users can simply <code>pip install your-package</code>.
+This dramatically lowers the barrier to entry for using your code.</p>
+<p><strong>Dependency management</strong>: When your package is on PyPI, other packages can list it as a dependency in their <code>pyproject.toml</code>.
+This creates a network of packages that work together seamlessly.</p>
+<p><strong>Versioning and stability</strong>: PyPI hosts multiple versions of your package, allowing users to pin to specific versions they know work (<code>your-package==1.2.3</code>) while you continue developing new features.</p>
+<p><strong>Discoverability</strong>: PyPI makes your package searchable and discoverable by the broader Python community, increasing its potential impact and user base.</p>
+<p><strong>Professional credibility</strong>: A well-maintained package on PyPI signals that your code is ready for production use and demonstrates your commitment to software engineering best practices.</p>
+<div class="admonition example">
+<p class="admonition-title">Real-world scenario</p>
+<p>You've developed a useful data analysis tool for your research group.
+Currently, colleagues need to:</p>
+<ol>
+<li>Clone your GitHub repository</li>
+<li>Navigate to the directory</li>
+<li>Create a virtual environment</li>
+<li>Run <code>pip install -e .</code></li>
+<li>Remember to pull updates regularly</li>
+</ol>
+<p>After publishing to PyPI, they simply run <code>pip install your-tool</code> and get started immediately.
+Updates are just <code>pip install --upgrade your-tool</code> away.</p>
+</div>
+<h2 id="how">How</h2>
+<h3 id="building-your-package">Building your package</h3>
+<p>Before you can publish your package, you need to build it into distribution formats that <code>pip</code> can install.
+The two standard formats are:</p>
+<ul>
+<li><strong>Wheel (<code>.whl</code>)</strong>: A pre-built binary distribution that installs quickly</li>
+<li><strong>Source distribution (<code>.tar.gz</code>)</strong>: The raw source code that gets built during installation</li>
+</ul>
+<p>To create these distributions, you need a <strong>build backend</strong>.
+The workshop template uses <a href="https://hatch.pypa.io/">Hatchling</a>, a modern, standards-compliant build system.
+You can see this configured in your <code>pyproject.toml</code>:</p>
+<div class="no-copy highlight"><pre><span></span><code><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+</code></pre></div>
+<p>This tells Python's build tools to use Hatchling when building your package.</p>
+<p>To build your package, use the <code>build</code> module (part of the Python Packaging Authority's standard tooling):</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>build
+python<span class="w"> </span>-m<span class="w"> </span>build
+</code></pre></div>
+<div class="no-copy highlight"><pre><span></span><code><span class="go">* Creating isolated environment: venv+pip...</span>
+<span class="go">* Installing packages in isolated environment:</span>
+<span class="go">  - hatchling</span>
+<span class="go">* Getting build dependencies for sdist...</span>
+<span class="go">* Building sdist...</span>
+<span class="go">* Building wheel from sdist...</span>
+<span class="go">* Creating isolated environment: venv+pip...</span>
+<span class="go">* Installing packages in isolated environment:</span>
+<span class="go">  - hatchling</span>
+<span class="go">* Getting build dependencies for wheel...</span>
+<span class="go">* Building wheel...</span>
+<span class="go">Successfully built dev-tutorial-&lt;YOUR_USERNAME&gt;-0.0.1.tar.gz and dev_tutorial_&lt;YOUR_USERNAME&gt;-0.0.1-py3-none-any.whl</span>
+</code></pre></div>
+<p>This creates a <code>dist/</code> directory containing both distribution formats:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux/macOS</label><label for="__tabbed_1_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>dist/
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">dir </span><span class="n">dist</span><span class="p">\</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Expected output:</p>
+<div class="no-copy highlight"><pre><span></span><code><span class="go">dev-tutorial-&lt;YOUR_USERNAME&gt;-0.0.1.tar.gz</span>
+<span class="go">dev_tutorial_&lt;YOUR_USERNAME&gt;-0.0.1-py3-none-any.whl</span>
+</code></pre></div>
+<h3 id="versioning">Versioning</h3>
+<p>Notice that the built distributions include a version number (<code>0.0.1</code>).
+This comes from the <code>__version__</code> variable in <code>src/dev_tutorial_&lt;YOUR_USERNAME&gt;/__about__.py</code>:</p>
+<div class="no-copy highlight"><pre><span></span><code><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.0.1&quot;</span>
+</code></pre></div>
+<p>Version numbers help users understand what changes between releases.
+The standard approach is <a href="https://semver.org/">Semantic Versioning (SemVer)</a>, which uses the format <code>MAJOR.MINOR.PATCH</code>:</p>
+<ul>
+<li><strong>MAJOR</strong>: Increment when you make backwards-incompatible API changes (e.g., <code>1.0.0</code> → <code>2.0.0</code>)</li>
+<li><strong>MINOR</strong>: Increment when you add functionality in a backward-compatible manner (e.g., <code>1.0.0</code> → <code>1.1.0</code>)</li>
+<li><strong>PATCH</strong>: Increment when you make backward-compatible bug fixes (e.g., <code>1.0.0</code> → <code>1.0.1</code>)</li>
+</ul>
+<p>For example:
+- <code>0.0.1</code> → <code>0.0.2</code>: Fixed a bug
+- <code>0.0.2</code> → <code>0.1.0</code>: Added a new feature
+- <code>0.1.0</code> → <code>1.0.0</code>: First stable release or breaking changes</p>
+<div class="admonition info">
+<p class="admonition-title">Version 0.x.x</p>
+<p>Versions starting with <code>0.</code> (like <code>0.1.0</code>) indicate the package is still in early development.
+Users should expect breaking changes between minor versions.
+Once your API is stable, release version <code>1.0.0</code>.</p>
+</div>
+<h3 id="creating-api-tokens">Creating API tokens</h3>
+<p>Before you can upload to PyPI or Test PyPI, you need to create an <strong>API token</strong> for authentication.
+PyPI no longer accepts username/password authentication - tokens are required.</p>
+<p>For Test PyPI:</p>
+<ol>
+<li>Create an account at <a href="https://test.pypi.org/">https://test.pypi.org/</a></li>
+<li>Go to Account Settings → API tokens</li>
+<li>Click "Add API token"</li>
+<li>Give it a name (e.g., "dev-tutorial upload")</li>
+<li>Copy the token immediately - it's only shown once!</li>
+</ol>
+<p>The token will look like <code>pypi-...</code> (a long string of characters).</p>
+<div class="admonition warning">
+<p class="admonition-title">Save your token!</p>
+<p>API tokens are only displayed once when created.
+Store it somewhere safe - you'll need it for uploads.
+If you lose it, you'll have to create a new one.</p>
+</div>
+<h3 id="uploading-to-test-pypi">Uploading to Test PyPI</h3>
+<p>Before publishing to the real PyPI, it's smart to test with <strong>Test PyPI</strong> - a separate instance where you can experiment without consequences.</p>
+<p>Install <code>twine</code>, the tool for uploading packages:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>twine
+</code></pre></div>
+<p>Upload your distributions to Test PyPI:</p>
+<div class="highlight"><pre><span></span><code>twine<span class="w"> </span>upload<span class="w"> </span>--repository<span class="w"> </span>testpypi<span class="w"> </span>dist/*
+</code></pre></div>
+<p>When prompted:
+- <strong>Username</strong>: Enter <code>__token__</code> (exactly as written, with double underscores)
+- <strong>Password</strong>: Paste your API token (including the <code>pypi-</code> prefix)</p>
+<p>Once uploaded, your package will be available at:</p>
+<div class="highlight"><pre><span></span><code>https://test.pypi.org/project/dev-tutorial-&lt;YOUR_USERNAME&gt;/
+</code></pre></div>
+<p>To install from Test PyPI and verify it works:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--index-url<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>dev-tutorial-&lt;YOUR_USERNAME&gt;
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">The real PyPI</p>
+<p>Test PyPI is a separate service from the real PyPI.
+Packages uploaded there are periodically deleted, and dependencies from the real PyPI might not be available.
+It's purely for testing the upload process!
+Publishing to the real PyPI is very similar, but I would only do it with <em>your</em> proper package when it's ready.</p>
+</div>
+<h3 id="automating-with-github-actions">Automating with GitHub Actions</h3>
+<p>Manually building and uploading packages works, but it's error-prone and tedious.
+A better approach is to automate the entire publishing process with GitHub Actions.
+The workshop template includes a workflow file <code>.github/workflows/cd.yml</code> that automatically publishes to Test PyPI when you push a version tag.</p>
+<div class="admonition question">
+<p class="admonition-title">If you are feeling lost</p>
+<p>I know this all seems like a lot. It is!
+The main goal here is to expose you to this approach of doing things, you can take your time in understanding all the aspects.</p>
+</div>
+<h3 id="setting-up-trusted-publishing">Setting up trusted publishing</h3>
+<p>Instead of storing API tokens as secrets, the workflow uses <strong>trusted publishing</strong> - a modern, more secure authentication method.
+With trusted publishing, PyPI trusts GitHub Actions to publish on your behalf without needing to manage tokens.</p>
+<p>To set this up on Test PyPI:</p>
+<ol>
+<li>Go to <a href="https://test.pypi.org/">https://test.pypi.org/</a> and log in</li>
+<li>Click <strong>Your projects</strong> (but you won't have a project yet - that's okay!)</li>
+<li>Go to <strong>Publishing</strong> in the left sidebar</li>
+<li>Scroll to <strong>Add a new pending publisher</strong></li>
+<li>Fill in the form:</li>
+<li><strong>PyPI Project Name</strong>: <code>dev-tutorial-&lt;YOUR_USERNAME&gt;</code> (your package name)</li>
+<li><strong>Owner</strong>: Your GitHub username</li>
+<li><strong>Repository name</strong>: <code>dev-tutorial-&lt;YOUR_USERNAME&gt;</code></li>
+<li><strong>Workflow name</strong>: <code>cd.yml</code></li>
+<li>Click <strong>Add</strong></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">How trusted publishing works</p>
+<p>When your GitHub Actions workflow runs, GitHub issues a short-lived identity token that proves the workflow is running from your specific repository.
+Test PyPI verifies this token and allows the upload - no long-lived secrets needed!
+This is more secure because there are no tokens to leak or rotate.</p>
+</div>
+<h3 id="automated-publishing-workflow">Automated publishing workflow</h3>
+<p>With trusted publishing and automated workflows, releasing a new version is as simple as:</p>
+<ol>
+<li>Update the version in <code>__about__.py</code> following SemVer (e.g., <code>0.0.1</code> → <code>0.1.0</code>)</li>
+<li>
+<p>Commit the bump in version number:</p>
+<div class="highlight"><pre><span></span><code># Update version, commit, tag, and push
+git commit -am &#39;Bump version to 0.1.0&#39;
+</code></pre></div>
+</li>
+<li>
+<p>Create and push a Git tag:</p>
+<div class="highlight"><pre><span></span><code>git tag v0.1.0
+git push origin main v0.1.0
+</code></pre></div>
+</li>
+</ol>
+<p>→ <strong>GitHub Actions automatically builds and publishes to Test PyPI!</strong></p>
+<p>Watch the workflow run in the <strong>Actions</strong> tab of your repository.
+If something goes wrong, check the workflow logs for error messages.</p>
+<p>Once published, verify your package has a new version at <code>https://test.pypi.org/project/dev-tutorial-&lt;YOUR_USERNAME&gt;/</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">This is the end...</p>
+<p>For now, this is the end of this basics of software development workshop.
+More material might be coming soon!</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
