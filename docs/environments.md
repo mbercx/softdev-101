@@ -48,6 +48,18 @@ For example, in my case the command returns
 /usr/bin/python3
 ```
 
+Let's create a new virtual environment!
+If you are still in your `test-repo` directory, navigate up one level to get back to your `softdev-workshop` directory:
+
+```
+cd ..
+pwd
+```
+
+```console {.no-copy}
+/path/to/your/softdev-workshop
+```
+
 The `venv` module can be run as a script using the `-m` option.
 To create a virtual environment in the `.my_env` directory, run:
 
@@ -100,7 +112,7 @@ To verify this, let's see what Python instance we're working with:
 This should now return a path inside the `bin` subdirectory of the virtual environment directory:
 
 ```console {.no-copy}
-/path/to/your/dir/.my_env/bin/python3
+/path/to/your/softdev-workshop/.my_env/bin/python3
 ```
 
 ### Installing packages

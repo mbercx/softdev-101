@@ -39,11 +39,16 @@ This is how all the packages you `pip install` are organized.
 ### Workshop repository
 
 For the rest of this workshop, you'll need to have a `git`-tracked Python package to work on.
-[Create a new **empty** repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository#creating-a-new-repository-from-the-web-ui) called `dev-tutorial` and `clone` it to your local directory:
+[Create a new **empty** repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository#creating-a-new-repository-from-the-web-ui) called `dev-tutorial-<YOUR_USERNAME>` and `clone` it to your local directory:
 
 ```
-git clone https://github.com/<YOUR_USERNAME>/dev-tutorial.git
+git clone https://github.com/<YOUR_USERNAME>/dev-tutorial-<YOUR_USERNAME>.git
 ```
+
+!!! question "Why add GitHub my username to the package name?"
+
+    The main reason is to have a unique package name.
+    This is important when we want to publish our package on the PyPI in the last topics section
 
 ??? question "Can I also work with my own code?"
 
@@ -58,22 +63,33 @@ First install it in your virtual environment:
 pip install copier
 ```
 
-Then copy the workshop template into your fresh repository.
+Now, enter your package directory:
 
 ```
-copier copy -f https://github.com/mbercx/softdev-101 dev-tutorial/
+cd dev-tutorial-<YOUR_USERNAME>
 ```
 
-To make sure Python is aware of the changes we make as we work on our package, let's install the package from its local directory in "editable" mode (`-e`):
+Then `copy` the workshop template into your fresh repository.
 
 ```
-pip install -e dev-tutorial/
+copier copy -f https://github.com/mbercx/softdev-101 .
 ```
+
+To make sure Python is aware of the changes we make as we work on our package, let's install it from its local directory in "editable" mode (`-e`):
+
+```
+pip install -e .
+```
+
+!!! info
+
+    Note that for both the `copier copy` and `pip install` command, we simply targeted the "local directory" (`.`).
+    You can target any directory you like, the reason I wrote the instructions this way is to minimize the number of `<YOUR_USERNAME>` instructions that you have to adapt manually.
+
 
 Listing the packages installed in our environment again with `pip list`:
 
 ```console {.no-copy}
-❯ pip list
 Package                Version Editable project location
 ---------------------- ------- ---------------------------------------
 annotated-types        0.7.0
@@ -85,6 +101,7 @@ dev-tutorial           0.0.1   /Users/mbercx/tmp/workshop/dev-tutorial
 ```
 
 You can see a new column: `Editable project location`.
+This is `pip` telling you that it installed that package from a local directory in editable mode.
 
 ### Structure
 
@@ -94,11 +111,10 @@ Everyone knows where to find the source code, tests, and documentation.
 Have a look at the structure of the `dev-tutorial` package:
 
 ```
-tree dev-tutorial
+tree .
 ```
 
 ```console {.no-copy}
-dev-tutorial
 ├── docs
 │   ├── developer.md
 │   └── index.md
@@ -107,12 +123,14 @@ dev-tutorial
 ├── pyproject.toml
 ├── README.md
 ├── src
-│   └── dev_tutorial
+│   └── dev_tutorial_mbercx
 │       ├── __about__.py
-│       └── __init__.py
+│       ├── __init__.py
+│       ├── functions.py
+│       └── messy_code.py
 └── tests
     ├── conftest.py
-    └── test_example.py
+    └── test_functions.py
 ```
 
 ??? warning "The `tree` command doesn't exist!"
@@ -131,18 +149,13 @@ Let's go over the various directories and files:
   Contains package metadata (name, version, dependencies), build system settings, and tool configurations.
 - `README.md`: The front page of your package - the first thing people see on GitHub or PyPI.
 - `src/`: Contains your actual source code. Using a `src/` directory is best practice because it keeps the project root clean and prevents import issues during testing.
-- `src/dev_tutorial/`: The actual Python package. Note the underscore instead of hyphen - package names must be valid Python identifiers.
+- `src/dev_tutorial_mbercx/`: The actual Python package containing the modules.
+  Note the underscore instead of hyphen - package names must be valid Python identifiers.
 - `tests/`: Your test files, kept separate from source code. We'll cover this in [the tests topic](tests.md).
 
 ### Pushing the template files to GitHub
 
 Let's push the local changes in our `dev-tutorial` package to GitHub.
-First, enter the package directory:
-
-```
-cd dev-tutorial
-```
-
 Stage _all_ the new files with:
 
 ```

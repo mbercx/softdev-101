@@ -79,21 +79,19 @@ docs = [
 For the documentation packages, you have to install the `docs` extra:
 
 ```
-pip install -e dev-tutorial[docs]
+pip install -e .[docs]
 ```
+
+!!! important "Be sure that you are in your package directory!"
+
+    Note again that we targeted the current directory (`.`).
+    Make sure that you are actually at the root of your package directory, also for the commands below.
 
 Notice the `[docs]` at the end: this tells `pip` to also install the optional dependencies specified under `docs`.
 The output is a little bigger this time!
 We only installed `mkdocs` and `mkdocs-material`, but they have their own dependencies.
 
-Now we can use the `mkdocs` command to build the documentation.
-However, this command needs to be executed at the root level of your package, where `mkdocs.yml` is located.
-
-```
-cd dev-tutorial
-```
-
-Now you can `build` the documentation pages:
+Now we can use the `mkdocs` command to build the documentation:
 
 ```
 mkdocs build
@@ -105,12 +103,27 @@ INFO    -  Building documentation to directory: /path/to/your/dir/dev-tutorial/s
 INFO    -  Documentation built in 0.22 seconds
 ```
 
+Again: this command needs to be executed at the root level of your package, where `mkdocs.yml` is located.
 As the second `INFO` message indicates, the website is built in the `site` directory.
 Open it and have a look:
 
-```
-open site/index.html
-```
+=== "macOS"
+
+    ```
+    open site/index.html
+    ```
+
+=== "Linux"
+
+    ```
+    xdg-open site/index.html
+    ```
+
+=== "Windows"
+
+    ```
+    start site/index.html
+    ```
 
 It's a little empty at the moment, but you can work on that later!
 
@@ -165,7 +178,7 @@ For the Material for MkDocs theme and all its possible extensions, we refer to [
 GitHub Pages is a free hosting service for static websites, perfect for documentation.
 MkDocs makes deploying to GitHub Pages incredibly simple.
 
-First, make sure your documentation builds successfully:
+First, shut down the server and make sure your documentation builds successfully:
 
 ```
 mkdocs build
@@ -174,7 +187,7 @@ mkdocs build
 Then deploy with a single command:
 
 ```
-mkdocs gh-deploy
+mkdocs gh-deploy --force
 ```
 
 This command:
@@ -184,10 +197,17 @@ This command:
 3. Pushes the built site to that branch
 4. GitHub automatically serves the content from the `gh-pages` branch
 
+
+!!! question "Why use the `--force`?"
+
+    By using `--force`, we override the existing `gh-pages` branch that is already there.
+    The reason it is there is because we already deployed our documentation via continuous integration.
+    You'll learn all about that in the corresponding topic page.
+
 Your documentation will be available at:
 
 ```
-https://<username>.github.io/dev-tutorial/
+https://<username>.github.io/dev-tutorial-<username>/
 ```
 
 For example, this documentation is hosted at: [https://mbercx.github.io/softdev-101/](https://mbercx.github.io/softdev-101/)

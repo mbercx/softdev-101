@@ -45,14 +45,18 @@ Here, we'll simply show some basic `git` commands to get you up and running, and
 Start by creating an empty directory:
 
 ```
-mdkir test
-cd test
+mkdir test-repo
+cd test-repo
 ```
 
 To start tracking any changes made to files in this directory, run
 
 ```
 git init
+```
+
+```console {.no-copy}
+Initialized empty Git repository in /path/to/your/softdev-workshop/test-repo/.git/
 ```
 
 Great!
