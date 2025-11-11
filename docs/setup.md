@@ -29,8 +29,18 @@ Whenever you need to authenticate to GitHub (e.g. when you `push` to your remote
 
     Be sure to copy and save the token somewhere **safe**!
 
+## Workshop directory
+
+To keep things nice and organised, it's best if you create a single directory where you execute all the commands for the workshop.
+Navigate to a suitable parent folder, and make a new directory:
+
+```bash
+mkdir softdev-workshop
+cd softdev-workshop
+```
+
 !!!info "Operating System"
 
     You can use your preferred operating system, but I have no experience with Windows.
     If you are using Windows, it may be a good idea to install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
-    I'll try to also show the Powershell equivalent of each command, but these don't always exist, and I may forget some here and there.
+    I'll try to also show the Windows Powershell equivalent of each command, but these don't always exist, and I may forget some here and there.
