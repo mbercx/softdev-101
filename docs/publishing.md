@@ -82,9 +82,19 @@ Successfully built dev-tutorial-<YOUR_USERNAME>-0.0.1.tar.gz and dev_tutorial_<Y
 
 This creates a `dist/` directory containing both distribution formats:
 
-```bash
-ls dist/
-```
+=== "Linux/macOS"
+
+    ```bash
+    ls dist/
+    ```
+
+=== "Windows"
+
+    ```powershell
+    dir dist\
+    ```
+
+Expected output:
 
 ```console {.no-copy}
 dev-tutorial-<YOUR_USERNAME>-0.0.1.tar.gz

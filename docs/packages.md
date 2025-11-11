@@ -110,9 +110,25 @@ However, adhering to a standard package structure makes it easier for others to 
 Everyone knows where to find the source code, tests, and documentation.
 Have a look at the structure of the `dev-tutorial` package:
 
-```
-tree .
-```
+=== "Linux/macOS"
+
+    ```bash
+    tree .
+    ```
+
+=== "Windows (cmd)"
+
+    ```cmd
+    tree /F
+    ```
+
+=== "Windows (PowerShell)"
+
+    ```powershell
+    tree /F
+    ```
+
+Expected structure:
 
 ```console {.no-copy}
 ├── docs
@@ -135,9 +151,9 @@ tree .
 
 ??? warning "The `tree` command doesn't exist!"
 
-    You may not have `tree` installed on your system.
-    As you can see, it's a neat way to see the contents of a directory, but it's not necessary for the tutorial.
-    Feel free to install it if you like it though!
+    On Linux/macOS, you may need to install `tree` (`brew install tree` on macOS, or `apt install tree` on Ubuntu).
+    On Windows, `tree` is built-in but shows output in a different format.
+    The `tree` command is a neat way to visualize directory structure, but it's not necessary for the tutorial.
 
 Let's go over the various directories and files:
 

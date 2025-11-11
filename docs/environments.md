@@ -80,19 +80,27 @@ Time to _activate_ the virtual environment!
 
 === "`bash`/`zsh`"
 
-    ```
+    ```bash
     source .my_env/bin/activate
     ```
 
 === "`fish`"
 
-    ```
+    ```fish
     source .my_env/bin/activate.fish
     ```
 
-=== "Windows"
+=== "Windows (cmd)"
 
-    TODO
+    ```cmd
+    .my_env\Scripts\activate.bat
+    ```
+
+=== "Windows (PowerShell)"
+
+    ```powershell
+    .my_env\Scripts\Activate.ps1
+    ```
 
 Typically, your prompt will be adapted, adding `(.my_env)` somewhere to indicate you are working "inside the `.my_env` environment".
 To verify this, let's see what Python instance we're working with:
